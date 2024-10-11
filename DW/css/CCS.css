@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: #2B2929;
+    color: #ffffff; /* Adicionando a cor branca para o texto */
+    }
+    
+    body::-webkit-scrollbar {
+        display: none;
+      }
+    
+    /* Definindo a cor branca para todos os links */
+    a {
+    color: #ffffff;
+    }
+    
+    /* header */
+
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .logoimg{
+        position: absolute;
+        left: 20px;
+    }
+    .logoimg img{
+        width: 80px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    .header {
+    background-color: #575757;
+    box-shadow: 1px 1px 4px 0 rgba(102, 102, 102, 0.1);
+    width: 100%;
+    padding: 28px 20px;
+    z-index: 3;
+    display: flex;
+    user-select: none;
+    align-items: center;    
+    justify-content: space-between;
+    }
+    
+    .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: hwb(0 41% 58%);
+    }
+    
+    .header li a {
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid #000000;
+    text-decoration: none;
+    color: #ffffff; /* Adicionando a cor branca para os links do header */
+    }
+    
+    div:not(header div), 
+    a:not(header a), 
+    p:not(header p), 
+    li:not(header li)
+    button {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+    button {
+        background: #010057;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        padding: 7px;
+    
+    }
+    
+    .header li a:hover,
+    .header .menu-btn:hover {
+    background-color: #000000;
+    }
+    
+    .header .logo {
+    display: block;
+    float: left;
+    font-size: 20px;
+    padding: 10px 85px;
+    text-decoration: none;
+    color: #ffffff; /* Adicionando a cor branca para o logo */
+    }
+    
+    /* menu */
+    
+    .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    }
+    
+    /* menu icon */
+    
+    .menu-icon {
+    cursor: pointer;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    }
+    
+    .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+    }
+    
+    .header .menu-icon .navicon:before,
+    .header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+    }
+    
+    .header .menu-icon .navicon:before {
+    top: 5px;
+    }
+    
+    .header .menu-icon .navicon:after {
+    top: -5px;
+    }
+    
+    /* menu btn */
+    
+    .header .menu-btn {
+    display: none;
+    }
+    
+    .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+    }
+    
+    .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+    }
+    
+    .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+    }
+    
+    .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+    }
+    
+    .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+    .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+    }
+    
+    /* 48em = 768px */
+    
+    @media (min-width: 48em) {
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding: 20px 15px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;}}
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid white;
+            padding: 8px;
+        }
+   
+        .imagens{ 
+            width: 500px;
+            height: 333px;
+        }
+
+        .carrossel {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+        
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+        
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+    .hero{
+    width: 100%;
+    height: 520px;
+    }
+
+
+    #myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 120px; /* Place the button near the bottom of the page */
+        right: 10px; /* Place the button near the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: rgba(95, 84, 84, 0.542); /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+        font-size: 14px; /* Increase font size */
+    }
+    
+    #myBtn:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
+    }
+    .diretoria{
+        display: flex;
+        align-items: center;
+        line-height: 2;
+        background-color:rgb(134, 124, 124);
+    } 
+    .diretoria img{
+        display: flex;
+        
+
+    }
+
+    .p40anos{
+        background-color:rgb(134, 124, 124);
+    }
+    .teste{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+    .ppridiret{
+        display:grid;
+        grid-template-columns: 1fr ;
+        justify-items: center;
+        line-height: 2;
+    
+        background-color:rgb(134, 124, 124);
+    }
+    .pjogaber{
+        background-color:rgb(134, 124, 124);
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .outrapjogar{
+        background-color:rgb(134, 124, 124);
+        display: grid;
+        grid-template-columns: 1fr ;
+    }
+    .pmestres{
+        background-color:rgb(134, 124, 124);
+        display: flex;
+        
+      
+    }
+    .imagens mestres{
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .pexpo{
+        background-color:rgb(134, 124, 124);
+        display: flex;
+        justify-content: center;
+    }
+    .pprimint{
+        background-color:rgb(134, 124, 124);;
+    }
+    .psegint{
+        background-color:rgb(134, 124, 124);
+        line-height: 2;
+    }
+    .videio{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .polimp{
+        display: flex;
+        background-color:rgb(134, 124, 124);
+        line-height: 2;
+        
+    }
+    .ftolimp{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .pminhist{
+        background-color:rgb(134, 124, 124);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+    }
+    .intdiret{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .tabela{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    footer {
+        background-color: #575757; /* Cor de fundo do rodapé */
+        color: #ffffff; /* Cor do texto */
+        text-align: center; /* Centraliza o texto */
+        padding: 15px 0; /* Espaço interno */
+        position: relative; /* Para um layout responsivo */
+        bottom: 0; /* Posiciona o rodapé na parte inferior */
+        width: 100%; /* Faz o rodapé ocupar toda a largura da tela */
+        z-index: 100; /* Garante que o rodapé fique acima de outros elementos */
+    }
+    
